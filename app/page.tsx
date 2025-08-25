@@ -3,10 +3,12 @@ import { motion } from 'motion/react'
 import { XIcon } from 'lucide-react'
 import { Spotlight } from '@/components/ui/spotlight'
 import { Magnetic } from '@/components/ui/magnetic'
-import Image from 'next/image'
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
-import type { Project } from './data'
+
+//them import
+import Image from 'next/image'
+//them import
 
 import {
   MorphingDialog,
@@ -162,6 +164,7 @@ export default function Personal() {
       initial="hidden"
       animate="visible"
     >
+{/*       
       <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
@@ -186,7 +189,9 @@ export default function Personal() {
             * Hướng ngoại parttime - việc gì vui thì mình làm. Bởi ta chỉ sống một cuộc đời mà thôi!
           </p>
         </div>
-      </motion.section>
+      </motion.section> */}
+
+
 
       {/* <motion.section
         variants={VARIANTS_SECTION}
@@ -217,6 +222,53 @@ export default function Personal() {
         </div>
       </motion.section> */}
 
+<motion.section
+  variants={VARIANTS_SECTION}
+  transition={TRANSITION_SECTION}
+>
+  <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+    <div className="md:w-3/4 pr-4">
+      <h2 className="text-xl font-semibold mb-1">Xin chào, mình là Tâm Túc Tắc</h2>
+      <p className="text-zinc-600 dark:text-zinc-400 mb-4">
+        Đây là trang review về cá nhân mình. Chào mừng bạn đã ghé thăm!
+      </p>
+      
+      <p className="text-zinc-600 dark:text-zinc-400 mb-2">
+        Giới thiệu một chút nhé:
+      </p>
+      <p className="text-zinc-600 dark:text-zinc-400">
+        * Tiếng Anh B1.
+      </p>
+      <p className="text-zinc-600 dark:text-zinc-400">
+        * Quốc tịch Việt Nam.
+      </p>
+      <p className="text-zinc-600 dark:text-zinc-400">
+        * Đam mê vẽ 3D Character và Environment.
+      </p>
+      <p className="text-zinc-600 dark:text-zinc-400 whitespace-nowrap">
+        * Ngoài ra thích đan len, nấu ăn và bàn chuyện ngày mai ăn gì.
+      </p>
+      <p className="text-zinc-600 dark:text-zinc-400 whitespace-nowrap">
+        * Hướng ngoại parttime - việc gì vui thì mình làm. Bởi ta chỉ sống một cuộc đời mà thôi!
+      </p>
+    </div>
+    
+    <div className="md:w-1/4 flex justify-end">
+      <div className="rounded-full overflow-hidden shadow-lg h-40 w-40">
+        <Image 
+          src="/images/avata.jpg" 
+          alt="Ảnh đại diện" 
+          width={224} 
+          height={224} 
+          className="object-cover w-full h-full"
+          priority
+        />
+      </div>
+    </div>
+  </div>
+</motion.section>
+
+
       <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
@@ -226,28 +278,18 @@ export default function Personal() {
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2">
           {PROJECTS.map((project) => (
             <div key={project.id} className="space-y-4">
-              <div className="block overflow-hidden rounded-lg bg-zinc-100 dark:bg-zinc-800">
-                <Zoom zoomImg={{
-                  src: project.image,
-                  alt: project.name,
-                  width: 1800,
-                  height: 1800
-                }}>
-                  <Image
-                    src={project.image}
-                    alt={project.name}
-                    width={600}
-                    height={600}
-                    quality={100}
-                    priority
-                    className="w-full transition-transform duration-300 hover:scale-105"
-                    style={{ objectFit: 'contain' }}
-                  />
-                </Zoom>
-              </div>
-              <div className="h-[85px] flex flex-col">
-                <h3 className="text-xl font-medium mb-2">{project.name}</h3>
-                <p className="text-zinc-600 dark:text-zinc-400 line-clamp-2">{project.description}</p>
+              <a href={project.link} className="block overflow-hidden rounded-lg bg-zinc-100 dark:bg-zinc-800">
+                <Image
+                  src={project.image}
+                  alt={project.name}
+                  width={600}
+                  height={600}
+                  className="w-full object-cover transition-transform duration-300 hover:scale-105"
+                />
+              </a>
+              <div>
+                <h3 className="text-xl font-medium">{project.name}</h3>
+                <p className="text-zinc-600 dark:text-zinc-400">{project.description}</p>
               </div>
             </div>
           ))}
