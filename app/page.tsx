@@ -192,46 +192,16 @@ export default function Personal() {
       </motion.section> */}
 
 
-
-      {/* <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-      >
-        <h3 className="mb-5 text-lg font-medium">Sản phẩm cá nhân</h3>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {PROJECTS.map((project) => (
-            <div key={project.name} className="space-y-2">
-              <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
-                <ProjectVideo src={project.video} />
-              </div>
-              <div className="px-1">
-                <a
-                  className="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
-                  href={project.link}
-                  target="_blank"
-                >
-                  {project.name}
-                  <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 dark:bg-zinc-50 transition-all duration-200 group-hover:max-w-full"></span>
-                </a>
-                <p className="text-base text-zinc-600 dark:text-zinc-400">
-                  {project.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </motion.section> */}
-
 <motion.section
   variants={VARIANTS_SECTION}
   transition={TRANSITION_SECTION}
 >
   <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
     <div className="md:w-3/4 pr-4">
-      <h2 className="text-xl font-semibold mb-1">Xin chào, mình là Tâm Túc Tắc</h2>
+      {/* <h2 className="text-xl font-semibold mb-1">Xin chào, mình là Tâm Túc Tắc</h2>
       <p className="text-zinc-600 dark:text-zinc-400 mb-4">
         Đây là trang review về cá nhân mình. Chào mừng bạn đã ghé thăm!
-      </p>
+      </p> */}
       
       <p className="text-zinc-600 dark:text-zinc-400 mb-2">
         Giới thiệu một chút nhé:
@@ -254,47 +224,69 @@ export default function Personal() {
     </div>
     
     <div className="md:w-1/4 flex justify-end">
-      <div className="rounded-full overflow-hidden shadow-lg h-40 w-40">
-        <Image 
-          src="/images/avata.jpg" 
-          alt="Ảnh đại diện" 
-          width={224} 
-          height={224} 
-          className="object-cover w-full h-full"
-          priority
-        />
-      </div>
-    </div>
+  <div className="rounded-full overflow-hidden shadow-lg h-40 w-40 md:-mt-16"> {/* Tăng từ -mt-8 lên -mt-16 */}
+    <Image 
+      src="/images/avata.jpg" 
+      alt="Ảnh đại diện" 
+      width={224} 
+      height={224} 
+      className="object-cover w-full h-full"
+      priority
+    />
+  </div>
+</div>
   </div>
 </motion.section>
 
 
-      <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-        className="space-y-8"
-      >
-        <h2 className="text-2xl font-semibold">Sản phẩm cá nhân</h2>
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2">
-          {PROJECTS.map((project) => (
-            <div key={project.id} className="space-y-4">
-              <a href={project.link} className="block overflow-hidden rounded-lg bg-zinc-100 dark:bg-zinc-800">
-                <Image
-                  src={project.image}
-                  alt={project.name}
-                  width={600}
-                  height={600}
-                  className="w-full object-cover transition-transform duration-300 hover:scale-105"
-                />
-              </a>
-              <div>
-                <h3 className="text-xl font-medium">{project.name}</h3>
-                <p className="text-zinc-600 dark:text-zinc-400">{project.description}</p>
-              </div>
-            </div>
-          ))}
+     
+<motion.section
+  variants={VARIANTS_SECTION}
+  transition={TRANSITION_SECTION}
+  className="space-y-8"
+>
+  <h2 className="text-2xl font-semibold">Sản phẩm cá nhân</h2>
+  <div className="grid grid-cols-1 gap-12 sm:grid-cols-2">
+    {PROJECTS.map((project) => (
+      <div key={project.id} className="space-y-4">
+        <div className="block overflow-hidden rounded-lg bg-zinc-100 dark:bg-zinc-800">
+          <Zoom 
+            zoomMargin={40}
+            zoomImg={{
+              src: project.image,
+              alt: project.name,
+              width: 1200,  // Zoom x2 từ 600
+              height: 1200  // Zoom x2 từ 600
+            }}
+          >
+            <Image
+              src={project.image}
+              alt={project.name}
+              width={600}
+              height={600}
+              className="w-full object-cover transition-transform duration-300 hover:scale-105 cursor-zoom-in"
+            />
+          </Zoom>
         </div>
-      </motion.section>
+        <div>
+          <h3 className="text-xl font-medium">{project.name}</h3>
+          <p className="text-zinc-600 dark:text-zinc-400">{project.description}</p>
+          {project.link && (
+            <a 
+              href={project.link} 
+              className="mt-2 inline-block text-blue-500 hover:underline"
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              Xem chi tiết
+            </a>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</motion.section>
+
 
       <motion.section
         variants={VARIANTS_SECTION}
