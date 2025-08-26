@@ -51,7 +51,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     title: '3D Artist',
     start: '2024',
     end: 'Present',
-    link: 'https://ibelick.com',
+    link: '#',
     id: 'work1',
   },
   {
@@ -59,7 +59,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     title: '3D Artist',
     start: '2022',
     end: '2024',
-    link: 'https://ibelick.com',
+    link: '#',
     id: 'work2',
   },
   {
@@ -67,7 +67,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     title: '3D Model',
     start: '2019',
     end: '2022',
-    link: 'https://ibelick.com',
+    link: '#',
     id: 'work3',
   },
 ]
@@ -76,48 +76,44 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     title: 'Chúng ta thường ví tuổi trẻ với điều gì?',
     description: 'Người ta thường ví tuổi trẻ với những hình ảnh',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
+    link: '#',
     uid: 'blog-1',
   },
   {
     title: 'Tuổi trẻ chỉ đến một lần - hãy sống rực rỡ',
     description:
       'Đừng để nó trôi qua trong sự an toàn - cái  bẫy của tuổi trẻ',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
+    link: '#',
     uid: 'blog-2',
   },
   {
     title: '3D Artist những kẻ mộng mơ',
     description:
       '3D Artist không chỉ là bản tình ca của đơn sắc',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
+    link: '#',
     uid: 'blog-3',
   },
   {
     title: 'Điều hối tiếc của chính bản thân đôi khi...',
     description: 'Đã có lúc bản thân tôi đã từng hỏi rằng liệu mình có điều gì hối tiếc không? Bạn thì sao...',
-    link: '/blog/example-mdx-metadata',
+    link: '#',
     uid: 'blog-4',
   },
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
-    label: 'Github',
-    link: 'https://github.com/ibelick',
+    label: 'Facebook',
+    link: 'https://www.facebook.com/your-profile',
   },
   {
-    label: 'Twitter',
-    link: 'https://twitter.com/ibelick',
+    label: 'ArtStation',
+    link: 'https://www.artstation.com/your-profile',
   },
   {
     label: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/ibelick',
-  },
-  {
-    label: 'Instagram',
-    link: 'https://www.instagram.com/ibelick',
+    link: 'https://www.linkedin.com/in/your-profile',
   },
 ]
 
-export const EMAIL = 'TamNT@email.com'
+export const EMAIL = 'nguyenthanhtam9xstudy@gmail.com'

@@ -9,20 +9,41 @@ import { ThemeProvider } from 'next-themes'
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#ffffff',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#09090b' },
+  ],
 }
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.tamnt.art/'),
   alternates: {
-    canonical: '/'
+    canonical: '/',
   },
   title: {
-    default: 'Nim - Personal website template',
-    template: '%s | Nim'
+    default: 'Tâm Túc Tắc - 3D Artist review',
+    template: '%s | Tâm Túc Tắc',
   },
-  description:  'Nim is a free and open-source personal website template built with Next.js 15, React 19 and Motion-Primitives.',
-};
+  description:
+    'Portfolio cá nhân của Tâm Túc Tắc - một 3D artist với đam mê tạo hình nhân vật và môi trường 3D.',
+  openGraph: {
+    title: 'Tâm Túc Tắc - 3D Artist review',
+    description:
+      'Portfolio cá nhân của Tâm Túc Tắc - một 3D artist với đam mê tạo hình nhân vật và môi trường 3D.',
+    url: 'https://www.tamnt.art/',
+    siteName: 'Tâm Túc Tắc',
+    images: [
+      {
+        url: '/studio.jpg', // Đặt ảnh trong thư mục /public
+        width: 1200,
+        height: 630,
+        alt: 'Tâm Túc Tắc - 3D Artist review',
+      },
+    ],
+    locale: 'vi_VN',
+    type: 'website',
+  },
+}
 
 const geist = Geist({
   variable: '--font-geist',
