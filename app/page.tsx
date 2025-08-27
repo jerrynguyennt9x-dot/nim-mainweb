@@ -25,6 +25,7 @@ import {
   BLOG_POSTS,
   EMAIL,
   SOCIAL_LINKS,
+  Project // Import the Project type from data.ts
 } from './data'
 
 const VARIANTS_CONTAINER = {
